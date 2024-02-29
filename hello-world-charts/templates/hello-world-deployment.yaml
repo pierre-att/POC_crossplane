@@ -1,13 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world-deployment
+  creationTimestamp: null
+  labels:
+    app: mydeployment
+  name: mydeployment
 spec:
-  replicas: 2
-  metadata:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mydeployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mydeployment
     spec:
       containers:
-      - name: hello-world-pod
-        image: nginx
-        ports:
-        - containerPort: 80
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
