@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: hello-world-deployment
+  labels:
+    app: hello-world
 spec:
   replicas: 1
   strategy:
@@ -13,6 +15,6 @@ spec:
     spec:
       containers:
       - name: hello-world-pod
-        image: nginx:latest
+        image: hello-world
         ports:
         - containerPort: 80
