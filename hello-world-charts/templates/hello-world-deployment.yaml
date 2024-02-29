@@ -8,6 +8,6 @@ spec:
     spec:
       containers:
       - name: hello-world-pod
-        image: nginx:latest
+        image: nginx
         ports:
         - containerPort: 80
